@@ -20,6 +20,7 @@ class Post
     public function getTitle (): string
     {
         return $this->title;
+       
     }
     public function getContent () : string {
         return $this->content;
@@ -33,3 +34,9 @@ class Post
 
 }
 
+if (isset($_POST["submit"])){
+    $userInput = new Post($_POST["title"], $_POST["content"], $_POST["authorName"], $_POST["date"]);}
+    echo '<br>';
+    print_r($userInput);
+    echo '<br>';
+    print_r(json_encode($_POST));
